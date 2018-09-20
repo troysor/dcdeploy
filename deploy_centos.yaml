@@ -1,0 +1,56 @@
+---
+
+- hosts: centos_hosts
+  become: yes
+  tasks:
+    - name: Install tools
+      yum: "name={{ item }} state=latest"
+      with_items:
+        - nano
+        - mlocate
+        - nmap
+        - unzip
+        - wget
+        - firewalld
+        #- bind-utils
+        #- libselinux-python
+        #- yum-plugin-copr
+        #- epel-release
+      #when: ansible_distribution == "CentOS"
+
+    - name: Setup timezone
+      timezone:
+        name: America/Chicago
+
+    - name: Install ntp
+      yum: name=ntp state=latest
+      notify: enable ntpd
+
+    - name: Set selinux policy
+      selinux:
+        state: permissive
+        policy: targeted
+
+    - name: Set root authorized keys
+      authorized_key:
+        user: root
+        state: present
+        key: "{{ lookup('file', '/home/troy/.ssh/id_rsa.pub') }}" 
+
+    - name: Setup troy user
+      user:
+        name: troy
+        comment: Troy Sorrells
+        shell: /bin/bash
+        groups: wheel
+        append: yes
+
+    - name: Setup authorized key
+      authorized_key:
+        user: troy
+        state: present
+        key: "{{ lookup('file', '/home/troy/.ssh/id_rsa.pub') }}" 
+
+  handlers:
+    - name: enable ntpd
+      service: name=ntpd enabled=yes state=started
