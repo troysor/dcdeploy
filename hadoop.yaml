@@ -1,8 +1,9 @@
 ---
 
-- hosts: centos_hosts
+- hosts: hadoop
   gather_facts: no
   become: yes
+  
   tasks:
     - pam_limits:
         domain: hadoop
