@@ -35,5 +35,8 @@
         group: root
         mode: 0644
 
+     - name: Install ambari-agent
+       yum: name=ambari-agent state=latest
+    
 
 
