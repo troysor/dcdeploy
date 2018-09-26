@@ -1,0 +1,17 @@
+---
+
+- hosts: edge
+  gather_facts: no
+  become: yes
+  
+  tasks:
+    - name: Install mysql connector
+      copy:
+        src: mysql-connector-java-8.0.12.jar
+        dest: /root/mysql-connector-java-8.0.12.jar
+        owner: root
+        group: root
+        mode: 0644
+    
+
+
