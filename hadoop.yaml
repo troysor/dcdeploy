@@ -44,7 +44,7 @@
         regexp: ^hostname
         line: "hostname=hdplab1.sorrells.org"
         state: present
-        notify: enable ambari-agent
+      notify: enable ambari-agent
 
 handlers:
     - name: enable ambari-agent
