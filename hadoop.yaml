@@ -42,7 +42,7 @@
       lineinfile:
         dest: /etc/ambari-agent/conf/ambari-agent.ini
         regexp: ^hostname
-        line: "hostname=hdplab1.sorrells.org"
+        line: "hostname=hdplab1.myhadooplab.com"
         state: present
       notify: enable ambari-agent
 
