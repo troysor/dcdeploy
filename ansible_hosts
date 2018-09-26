@@ -1,8 +1,14 @@
-[hadoop]
+[edge]
 hdplab1
+
+[nodes]
 hdplab2
 hdplab3
 hdplab4
 
-[hadoop:vars]
+[hadoop:children]
+edge
+nodes
+
+[all:vars]
 pipelining = true
