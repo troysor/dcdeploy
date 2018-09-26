@@ -1,32 +1,8 @@
-[new]
-anstest
-
-[new:vars]
-ansible_python_interpreter=/usr/bin/python3
-
-[centos_hosts]
+[hadoop]
 hdp1
 hdp2
 hdp3
 hdp4
 
-[centos_hosts:vars]
+[hadoop:vars]
 pipelining = true
-
-[hadoop]
-hd1
-hd2
-hd3
-hd4
-hd5
-
-[ubuntu_hosts]
-ub1
-ub2
-ub3
-ub4
-ub5
-ub6
-
-[ubuntu_hosts:vars]
-ansible_python_interpreter=/usr/bin/python3
