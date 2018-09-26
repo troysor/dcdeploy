@@ -1,8 +1,8 @@
 [hadoop]
-hdp1
-hdp2
-hdp3
-hdp4
+hdplab1
+hdplab2
+hdplab3
+hdplab4
 
 [hadoop:vars]
 pipelining = true
