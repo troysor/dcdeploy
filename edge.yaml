@@ -11,7 +11,7 @@
     - name: Install mysql connector
       copy:
         src: mysql-connector-java-8.0.12.jar
-        dest: /var/lib/ambari-server/resources/mysql-connector-java-8.0.12.jar
+        dest: /var/lib/ambari-server/resources/mysql-connector-java.jar
         owner: root
         group: root
         mode: 0644
