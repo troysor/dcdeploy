@@ -38,6 +38,12 @@
     - name: Install ambari-agent
       yum: name=ambari-agent state=latest
 
-    
+    - name: Adjust ambari-agent file
+      lineinfile:
+        dest: /etc/ambari-agent/conf/ambari-agent.ini
+        regexp: ^hostname
+        line: "hostname=hdplab1.sorrells.org"
+        state: present
+        
 
 
