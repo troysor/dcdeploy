@@ -46,7 +46,7 @@
         state: present
       notify: enable ambari-agent
 
-handlers:
+  handlers:
     - name: enable ambari-agent
       service: name=ambari-agent enabled=yes state=started
 
