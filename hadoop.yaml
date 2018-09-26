@@ -45,6 +45,7 @@
 
     - name: Install ambari-agent
       yum: name=ambari-agent state=latest
+      
     
 
 
